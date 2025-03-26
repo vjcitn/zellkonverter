@@ -129,7 +129,7 @@ writeH5AD <- function(sce, file, X_name = NULL, skip_assays = FALSE,
             if (!is_sparse(mat)) {
                 HDF5Array::writeHDF5Array(
                     mat,
-                    filepath = file, name = curp, with.dimnames = FALSE
+                    filepath = file, name = curp, with.dimnames = TRUE
                 )
             } else {
                 .write_CSR_matrix(file, name = curp, mat = mat)
